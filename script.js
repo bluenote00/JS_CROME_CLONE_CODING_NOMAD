@@ -1,3 +1,5 @@
+//1. const, let, var의 차이점
+
 let a = 5;
 let b = 2;
 const veryLong = "anne";
@@ -24,6 +26,9 @@ console.log(something, amIFat);
 // null : 값이 아무것도 없다 (false와 다르다. false에는 아니라는 값이 있음), null은 자연적으로 생겨나지 않는다. 값이 없음을 표현할떄 사용 '비어있다'
 
 
+
+// 2. array
+
 const mon = "mon";
 const tue = "tue";
 const wed = "wed";
@@ -44,3 +49,44 @@ const toBuy = ["potato", "tomato", "pizza"];
 toBuy.push("kimbab");
 
 console.log(toBuy);
+
+
+// 3. Objects 
+const playerName = "ara";
+const playerPoints = 12121212;
+const playerHandsome = false;
+const playerFat = "litte";
+
+
+// Objects 안에서는 = 를 사용하지 않는다. - 내부 요소들을 property라고 한다.
+const player = {
+    name: "ara",
+    points: 10,
+    fat: true,
+};
+
+// object에 접근하는 방법
+console.log(player);
+console.log(player.name);
+console.log(player.points);
+console.log(player["name"]);
+
+player.fat = false;
+console.log(player); 
+
+// const는 상수인데 어떻게 fat:true를 false로 바꾸었는가? 
+// -> object를 수정한것이 아니라 object의 boolean을 수정했기때문에 가능한것!
+
+
+
+// Object에 추가하기
+player.lastName = "potato";
+console.log(player);
+// 플레이어에 lastName이 추가된 것을 볼 수 있다.
+
+console.log(player);
+player.points = player.points + 15;
+console.log(player); // 원본의 player.points(10)에서 15가 더해진 것을 볼 수 있다.
+
+// 설명이 필요 없는 것들 -> array로!
+// 설명이 필요한 것들 -> Object로!
