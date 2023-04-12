@@ -90,3 +90,38 @@ console.log(player); // 원본의 player.points(10)에서 15가 더해진 것을
 
 // 설명이 필요 없는 것들 -> array로!
 // 설명이 필요한 것들 -> Object로!
+
+
+
+// 4. Functions-1
+// Function : 코드의 조각으로서 계속해서 반복으로 사용할 수 있는것 (코드를 효율적으로 사용하기 위해)
+
+function sayHello(nameOfPerson, age) {
+    console.log("Hello my name is " + nameOfPerson + " and I'm " + age);
+};
+
+sayHello("nico", 10);
+sayHello("dal", 23);
+
+function plus(firstNumber, secondNumber) {
+    console.log(firstNumber + secondNumber);
+}
+
+function divide(a, b) {
+    console.log(a / b);
+}
+
+plus(8, 60);
+divide(2, 4);
+
+// NaN = Not a Number
+
+
+const player = {
+    name: "nico",
+    sayHello: function (otherPersonsName){
+        console.log("Hello! " + otherPersonsName + "nice to meet you");
+    }
+};
+
+player.sayHello("lynn");
