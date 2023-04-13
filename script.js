@@ -117,11 +117,76 @@ divide(2, 4);
 // NaN = Not a Number
 
 
+/*
+
 const player = {
-    name: "nico",
     sayHello: function (otherPersonsName){
-        console.log("Hello! " + otherPersonsName + "nice to meet you");
+        console.log("Hello! " + otherPersonsName + " nice to meet you");
     }
 };
 
 player.sayHello("lynn");
+
+
+
+const calculator = {
+    plus: function (a, b) {
+        console.log(a+b);
+    },
+    
+    minus: function (a, b) {
+        console.log(a-b);
+    },
+
+    multiple: function (a, b) {
+        console.log(a*b);
+    },
+
+    divide: function (a, b) {
+        console.log(a/b);
+    }
+};
+
+calculator.plus(1,2);
+calculator.minus(1,2);
+calculator.multiple(1,2);
+calculator.divide(1,2);
+
+
+// Return
+const age = 96;
+
+function calculatorKrAge(ageOfForeigner) {
+    return ageOfForeigner + 2;
+}
+
+const krAge = calculatorKrAge(age);
+
+console.log(krAge);
+
+
+const calculator = {
+    plus: function (a, b) {
+        return a+b;
+    },
+    
+    minus: function (a, b) {
+        return a-b;
+    },
+
+    multiple: function (a, b) {
+        return a*b;
+    },
+
+    divide: function (a, b) {
+        return a/b;
+    }
+};
+
+const plusResult = calculator.plus(2, 3);
+
+function안에서 return과 추가작업을 입력하면
+return만 작업하고 추가 수행은 이뤄지지 않는다.
+만약 return 앞에 기타작업이 있다면 이 작업은 수행된다.
+즉, return"까지만" 수행된다!
+*/
