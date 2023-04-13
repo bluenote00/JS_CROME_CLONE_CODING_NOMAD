@@ -190,3 +190,10 @@ return만 작업하고 추가 수행은 이뤄지지 않는다.
 만약 return 앞에 기타작업이 있다면 이 작업은 수행된다.
 즉, return"까지만" 수행된다!
 */
+
+// Conditional (조건문)
+const age = parseInt(prompt("How old are you?"));
+
+console.log(age, parseInt(age));
+
+// parseInt로 age를 number로 형변환을 시켜주며, 문자를 입력할 경우 NaN를 띄운다.
