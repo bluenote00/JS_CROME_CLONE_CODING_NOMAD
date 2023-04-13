@@ -194,6 +194,39 @@ return만 작업하고 추가 수행은 이뤄지지 않는다.
 // Conditional (조건문)
 const age = parseInt(prompt("How old are you?"));
 
-console.log(age, parseInt(age));
-
 // parseInt로 age를 number로 형변환을 시켜주며, 문자를 입력할 경우 NaN를 띄운다.
+
+if(isNaN(age) || age < 0) {
+    //condition === true (숫자가 아닐 경우)
+    console.log("Please write A number.");
+} else if (age < 18) {
+    // condition === false (숫자일 경우)
+    console.log("you are too young");
+} else if (age >= 18 && age <= 50) {
+    console.log("you can drink");
+} else if (age > 50  && age <= 80) {
+    console.log("you should exercise");
+} else if (age === 100) { // 조건문의 순서도 중요! 아래 80세 이상이 먼저 나오면 age === 100 조건과 겹쳐 실행되지 않는다.
+    console.log("you are wise");
+} else if (age > 80) {
+    console.log("you can do whatever you want");
+} else {
+    console.log("you can drink");
+}
+
+// else는 위에 모든 조건이 전부 false여야 작동한다. 하나라도 true일 경우 작동하지 않는다.
+/*
+true || true === true
+false || true === true
+true || false === true
+false || false === false
+
+true && true === true
+false && true === false
+true && false === false
+false && false === false
+
+=는 한개의 value를 할당하며,
+==는 값만을 비교, 
+===는 값과 유형을 비교한다.
+*/
