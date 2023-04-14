@@ -1,4 +1,5 @@
-//1. const, let, var의 차이점
+/*
+// 1. const, let, var의 차이점
 
 let a = 5;
 let b = 2;
@@ -72,7 +73,7 @@ console.log(player.points);
 console.log(player["name"]);
 
 player.fat = false;
-console.log(player); 
+console.log(player);
 
 // const는 상수인데 어떻게 fat:true를 false로 바꾸었는가? 
 // -> object를 수정한것이 아니라 object의 boolean을 수정했기때문에 가능한것!
@@ -189,14 +190,14 @@ function안에서 return과 추가작업을 입력하면
 return만 작업하고 추가 수행은 이뤄지지 않는다.
 만약 return 앞에 기타작업이 있다면 이 작업은 수행된다.
 즉, return"까지만" 수행된다!
-*/
+
 
 // Conditional (조건문)
 const age = parseInt(prompt("How old are you?"));
 
 // parseInt로 age를 number로 형변환을 시켜주며, 문자를 입력할 경우 NaN를 띄운다.
 
-if(isNaN(age) || age < 0) {
+if (isNaN(age) || age < 0) {
     //condition === true (숫자가 아닐 경우)
     console.log("Please write A number.");
 } else if (age < 18) {
@@ -204,7 +205,7 @@ if(isNaN(age) || age < 0) {
     console.log("you are too young");
 } else if (age >= 18 && age <= 50) {
     console.log("you can drink");
-} else if (age > 50  && age <= 80) {
+} else if (age > 50 && age <= 80) {
     console.log("you should exercise");
 } else if (age === 100) { // 조건문의 순서도 중요! 아래 80세 이상이 먼저 나오면 age === 100 조건과 겹쳐 실행되지 않는다.
     console.log("you are wise");
@@ -215,7 +216,7 @@ if(isNaN(age) || age < 0) {
 }
 
 // else는 위에 모든 조건이 전부 false여야 작동한다. 하나라도 true일 경우 작동하지 않는다.
-/*
+
 true || true === true
 false || true === true
 true || false === true
@@ -229,4 +230,48 @@ false && false === false
 =는 한개의 value를 할당하며,
 ==는 값만을 비교, 
 ===는 값과 유형을 비교한다.
+!== 아닌 경우
+
+
+
+
+
+// The Document Object 
+
+const title = document.getElementById("title");
+console.dir(title);
+
+// JS는 HTMLE element를 가지고 오지만, HTML 자체를 보여주진 않는다.
+
+title.innerText = "Got you";
+
+//HTML의 ID="title" 텍스트를 바꾼다
+
+console.log(title.id); //HTML의 ID="title" 확인
+console.log(title.className); //HTML의 class의 이름 확인
 */
+
+// 1. getElementsByClassName : HTML에서 CLASS명으로 검색
+const hellos = document.getElementsByClassName("hello");
+console.log(hellos);
+
+
+// 2. getElementsByTagName : HTML에서 TAG명으로 검색
+const title = document.getElementsByTagName("h1");
+console.log(title);
+
+
+// 3. querySelector : HTML에서 element를 CSS 방식으로 검색
+// 이 경우에는 첫번째것 하나만 나온다. (전부 다 갖고오고싶다면 querySelectorAll 사용)
+const title2 = document.querySelector(".hello h1");
+console.log(title2);
+
+const title3 = document.querySelectorAll(".hello h1");
+console.log(title3);
+
+const title4 = document.querySelector(".hello h1:first-child");
+console.log(title4);
+
+// getElementById 와 querySelector의 차이점 :
+// getElementById는 class나 id명을 가져올 순 있지만 하위 form을 세부적으로 선택할순 없다
+
