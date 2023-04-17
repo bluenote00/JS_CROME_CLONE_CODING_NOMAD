@@ -249,7 +249,7 @@ title.innerText = "Got you";
 
 console.log(title.id); //HTML의 ID="title" 확인
 console.log(title.className); //HTML의 class의 이름 확인
-*/
+
 
 // 1. getElementsByClassName : HTML에서 CLASS명으로 검색
 const hellos = document.getElementsByClassName("hello");
@@ -269,9 +269,72 @@ console.log(title2);
 const title3 = document.querySelectorAll(".hello h1");
 console.log(title3);
 
-const title4 = document.querySelector(".hello h1:first-child");
+const title4 = document.querySelector("div.hello h1:first-child");
 console.log(title4);
 
 // getElementById 와 querySelector의 차이점 :
-// getElementById는 class나 id명을 가져올 순 있지만 하위 form을 세부적으로 선택할순 없다
+// getElementById는 class나 id명을 가져올 순 있지만 하위 form을 세부적으로 선택할순 없다 (ex) div, h1...
 
+
+*/
+
+
+// Evnets
+
+const h1 = document.querySelector("div.hello h1:first-child");
+//console.dir(h1);
+
+//h1.style.color = "blue"; // 선택한 태그가 파란색으로 바뀐다
+
+function handleTitleClick() {
+    h1.style.color = "blue";
+}
+
+function handleMouseEnter() {
+    h1.innerText = "Mouse is here";
+}
+
+function handleMouseLeave() {
+    h1.innerText = "Mouse is gone";
+}
+
+function handleWindowResize() {
+    document.body.style.backgroundColor = "tomato";
+}
+// document의 body나 title은 고유하기 때문에, div같은 하위 요소들은 호출이 되지 않는다.
+// 나머지 element는 querySelector나, getElementById로 불러와야 한다.
+
+function handleWindowCopy() {
+    alert("copier!");
+}
+
+function handleWindowOffline() {
+    alert("SOS NO WIFI");
+}
+
+function handleWindowOnline() {
+    alert("Good");
+}
+
+
+h1.addEventListener("click", handleTitleClick);
+//h1.onclick = handleTitleClick;
+
+// 위에 두 코드는 동일하나 addEventListener를 선호하는 이유는
+// removeEventListener을 통해서 event listener을 제거할수있기 때문이다.
+
+h1.addEventListener("mouseenter", handleMouseEnter);
+//h1.onmouseenter = handleMouseEnter;
+
+h1.addEventListener("mouseleave", handleMouseLeave);
+//h1.onmouseleave = handleMouseLeave;
+
+window.addEventListener("resize", handleWindowResize);
+// resize : 콘솔창을 키거나, 창에 변화가 생기면 이벤트가 발생한다.
+
+window.addEventListener("copy", handleWindowCopy);
+// copy하면 알림창이 뜨는 이벤트 
+
+window.addEventListener("offline", handleWindowOffline);
+
+window.addEventListener("online", handleWindowOnline);
