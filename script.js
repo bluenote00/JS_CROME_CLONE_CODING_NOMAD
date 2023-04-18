@@ -276,7 +276,7 @@ console.log(title4);
 // getElementById는 class나 id명을 가져올 순 있지만 하위 form을 세부적으로 선택할순 없다 (ex) div, h1...
 
 
-*/
+
 
 
 // Evnets
@@ -338,3 +338,53 @@ window.addEventListener("copy", handleWindowCopy);
 window.addEventListener("offline", handleWindowOffline);
 
 window.addEventListener("online", handleWindowOnline);
+*/
+
+
+
+
+//CSS in Javascript
+
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+    const currentColor = h1.style.color;
+    let newColor;
+    if(currentColor === "blue") {
+        newColor = "tomato";
+    } else {
+        newColor = "blue";
+    }
+    h1.style.color = newColor;
+    
+    /*
+    // 1. className 사용할경우
+    const clickedClass = "clicked";
+    // 클래스명을 string으로 정할 경우, 변수 이름 변경될 경우 전부 업데이트해야하는 불편함이 있다.
+    if(h1.className === "active") {
+        h1.className = "";
+    } else {
+        h1.className = "active";
+    }
+    
+
+    // 2. classList 사용할경우 : js가 특정 classname만 변경하도록함 (클릭해도 class명이 바뀌지 않는다!)
+    const clickedClass = "clicked";
+    if (h1.classList.contains(clickedClass)) {
+        h1.classList.remove();
+    } else {
+        h1.classList.add(clickedClass);
+    }
+
+    classList는 class들의 목록으로 작업할 수 있게끔 허용하며,
+    className은 이전 class와 상관없이 모든걸 교체해야한다.
+   */
+
+    // 3. toggle을 사용할 경우 : classList와 같은 기능
+    // toggle은 h1의 classList에 clicked class가 이미 있는지 확인해서, 
+    // 만약 있다면 toggle이 clicked를 제거하고, 만약 없다면 classList에 추가해준다.
+    const clickedClass = "clicked";
+        h1.classList.toggle("clicked");
+}
+
+    h1.addEventListener("click", handleTitleClick);
